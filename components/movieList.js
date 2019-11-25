@@ -7,15 +7,15 @@ class MovieList extends React.Component{
 
         return(
             <div className="row">
-                
-                { movies.map( movie => (
+                { 
+                    movies.map( movie => (
                         <div className="col-lg-4 col-md-6 mb-4">
-                        <Card
-                        title={movie.name}
-                        text= {movie.description}
-                        rating = {movie.rating}
-                        img = {movie.image}
-                        />
+                            <Card
+                                title={movie.name}
+                                text= {movie.description}
+                                rating = {movie.rating}
+                                img = {movie.image}
+                            />
                         </div>
                     ))
                 }
