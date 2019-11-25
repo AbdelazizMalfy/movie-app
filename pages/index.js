@@ -25,7 +25,7 @@ const Home = () => (
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">About</a>
+            <a className="nav-link" href="/about">About</a>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">Services</a>
@@ -181,7 +181,7 @@ const Home = () => (
       </div>
     </div>
   </div>
-  
+
   <footer className="py-5 bg-dark">
     <div className="container">
       <p className="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
