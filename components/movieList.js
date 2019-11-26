@@ -24,6 +24,7 @@ class MovieList extends React.Component{
                                 text= {this.shortenText(movie.description)}
                                 rating = {movie.rating}
                                 img = {movie.image}
+                                id = {movie.id}
                             />
                         </div>
                     ))
