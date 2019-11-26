@@ -31,11 +31,25 @@ const MOVIE_DATA = [
 export const getMovies = () => {
 
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(MOVIE_DATA)
-        }, 200);
+      setTimeout(() => {
+          resolve(MOVIE_DATA)
+      }, 50);
     })
 
 
 }
-  
+
+export const getMovieById = (id) => {
+
+  return new Promise((resolve,reject) => {
+    const foundMovie = MOVIE_DATA.find(movie => movie.id === id )
+
+    console.log(foundMovie)
+
+    setTimeout(() => {
+      resolve(foundMovie);
+    }, 50);
+  })
+
+}
+   
