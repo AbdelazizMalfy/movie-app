@@ -18,7 +18,7 @@ class MovieList extends React.Component{
             <div className="row">
                 { 
                     movies.map( movie => (
-                        <div key={movies.id} className="col-lg-4 col-md-6 mb-4">
+                        <div key={movie.id} className="col-lg-4 col-md-6 mb-4">
                             <Card
                                 title={movie.name}
                                 text= {this.shortenText(movie.description)}

@@ -11,13 +11,23 @@ import Footer from '../components/footer';
 import { getMovies } from '../actions'
 
 class Home extends React.Component {
-  state = {
-    movies: []
+
+  static async getInitialProps(){
+    const movies = await getMovies()
+
+    return {
+      movies
+    }
   }
 
-  componentDidMount(){
-    getMovies().then(movies => this.setState({movies}))
-  }
+
+  // state = {
+  //   movies: []
+  // }
+
+  // componentDidMount(){
+  //   getMovies().then(movies => this.setState({movies}))
+  // }
 
   render(){
     return (
@@ -38,7 +48,7 @@ class Home extends React.Component {
               </div>
               <div className="col-lg-9">
                 <Carousel/>
-                <MovieList movies={this.state.movies} />
+                <MovieList movies={this.props.movies} />
               </div>
             </div>
           </div>
