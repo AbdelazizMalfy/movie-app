@@ -4,7 +4,7 @@ import Sidebar from '../components/Sidebar';
 import Carousel from '../components/carousel';
 import MovieList from '../components/movieList';
 
-import { getMovies, getCategories } from '../actions'
+import { getMovies, getCategories , getMoviesByRating , getMoviesByGenre} from '../actions'
 
 class Home extends React.Component {
 
@@ -12,6 +12,9 @@ class Home extends React.Component {
     const movies = await getMovies()
     const images = movies.map( movie => ({ id:`image-${movie.id}`, imageUrl: movie.cover }))
     const categories = await getCategories();
+    const filteredMoviesByRating = await getMoviesByRating('2');
+    const filteredMoviesByGenre = await getMoviesByGenre('adventure');
+    console.log(filteredMoviesByGenre);
 
     return {
       movies,
