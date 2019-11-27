@@ -10,7 +10,7 @@ class Home extends React.Component {
 
   static async getInitialProps(){
     const movies = await getMovies()
-    const images = movies.map( movie => ({ id:`image-${movie.id}`, imageUrl: movie.image }))
+    const images = movies.map( movie => ({ id:`image-${movie.id}`, imageUrl: movie.cover }))
 
     return {
       movies,
