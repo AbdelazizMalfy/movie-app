@@ -1,7 +1,9 @@
+import Modal from './modal';
+
 const sidebar = (props) => {
-    console.log(props)
     return (
         <div>
+            <Modal />
             <h1 className="my-4">Categories</h1>
             <div className="list-group">
                 {

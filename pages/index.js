@@ -21,17 +21,18 @@ class Home extends React.Component {
   }
 
   render(){
+    const { movies , images , categories } = this.props;
     return (
       <div>
         <div className='home-page'>
           <div className="container">
             <div className="row">
               <div className="col-lg-3">
-                <Sidebar categories = {this.props.categories} />        
+                <Sidebar categories = { categories } />        
               </div>
               <div className="col-lg-9">
-                <Carousel images = { this.props.images } />
-                <MovieList movies={this.props.movies || []}  />
+                <Carousel images = { images } />
+                <MovieList movies={ movies }  />
               </div>
             </div>
           </div>
