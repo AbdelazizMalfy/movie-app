@@ -57,7 +57,7 @@ class movieCreateForm extends React.Component{
                     className="form-control" 
                     id="name" 
                     aria-describedby="emailHelp" 
-                    placeholder="Lord of the Rings" />
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="description">Description</label>
@@ -68,7 +68,7 @@ class movieCreateForm extends React.Component{
                     type="text" 
                     className="form-control" 
                     id="description" 
-                    placeholder="Somewhere in Middle-earth..." />
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="rating">Rating</label>
@@ -81,7 +81,7 @@ class movieCreateForm extends React.Component{
                     min="0" 
                     className="form-control" 
                     id="rating" 
-                    placeholder="3" />
+                    />
                     <small id="emailHelp" className="form-text text-muted">Max: 5, Min: 0 </small>
                 </div>
                 <div className="form-group">
