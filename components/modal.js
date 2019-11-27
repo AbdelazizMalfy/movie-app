@@ -3,6 +3,7 @@ const Modal = (props) => {
     let closeButton = null;
     
     const submitModal = ()=>{
+        
         closeButton.click();
     }
 
