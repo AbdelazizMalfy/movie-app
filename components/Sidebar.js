@@ -4,13 +4,19 @@ import { createMovie } from '../actions/index';
 
 const sidebar = (props) => {
 
+    let modal = null;
+
     const onCreateMovie = (movie) => {
-        createMovie(movie).then( movies => console.log(movies))
+        createMovie(movie).then( movies => {
+            modal.closeModal()
+            return movies
+        })
+
     }
 
     return (
         <div>
-            <Modal  hasSubmit={true}>
+            <Modal ref={e => modal = e} hasSubmit={true}>
                 <MovieCreateForm createMovie={onCreateMovie} />
             </Modal>
             <h1 className="my-4">Categories</h1>
