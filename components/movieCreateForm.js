@@ -9,7 +9,7 @@ class movieCreateForm extends React.Component{
             image : '',
             cover : '',
             Storyline : '',
-            genre: []
+            genre: ''
         }
     }
 
@@ -22,22 +22,24 @@ class movieCreateForm extends React.Component{
 
     onGenreChange = (e) =>{
         const options = e.target.options;
-        let value = []
+        let values = []
 
         for (let i = 0 ; i < options.length ; i++) {
             if(options[i].selected){
-                value.push(options[i].value)
+                values.push(options[i].value)
             }
         }
 
         const newForm = {...this.state.form};
-        newForm[genre] = value.toString();
+        newForm.genre = values.toString()
 
-        this.setState({ from: newForm })
+        this.setState({ form : newForm })
     }
 
     onFormSubmit = (e) =>{
         e.preventDefault();
+        console.log(this.state.form)
+        this.props.createMovie({...this.state.form});
 
     }
 
@@ -129,6 +131,7 @@ class movieCreateForm extends React.Component{
                     <option>action</option>
                     </select>
                 </div>
+                <button type="submit" className="btn btn-primary btn-block">Create</button>
             </form>
         )
     }

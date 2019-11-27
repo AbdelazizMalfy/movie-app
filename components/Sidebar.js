@@ -1,11 +1,17 @@
 import Modal from './modal';
 import MovieCreateForm from './movieCreateForm';
+import { createMovie } from '../actions/index';
 
 const sidebar = (props) => {
+
+    const onCreateMovie = (movie) => {
+        createMovie(movie).then( movies => console.log(movies))
+    }
+
     return (
         <div>
-            <Modal>
-                <MovieCreateForm />
+            <Modal  hasSubmit={true}>
+                <MovieCreateForm createMovie={onCreateMovie} />
             </Modal>
             <h1 className="my-4">Categories</h1>
             <div className="list-group">
