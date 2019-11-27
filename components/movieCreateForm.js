@@ -9,7 +9,7 @@ class movieCreateForm extends React.Component{
             image : '',
             cover : '',
             Storyline : '',
-            genre: ''
+            genre: []
         }
     }
 
@@ -20,8 +20,25 @@ class movieCreateForm extends React.Component{
         this.setState({ form : newForm })
     }
 
+    onGenreChange = (e) =>{
+        const options = e.target.options;
+        let value = []
+
+        for (let i = 0 ; i < options.length ; i++) {
+            if(options[i].selected){
+                value.push(options[i].value)
+            }
+        }
+
+        const newForm = {...this.state.form};
+        newForm[genre] = value.toString();
+
+        this.setState({ from: newForm })
+    }
+
     onFormSubmit = (e) =>{
         e.preventDefault();
+
     }
 
     render(){
@@ -99,10 +116,9 @@ class movieCreateForm extends React.Component{
                 </div>
                 <div className="form-group">
                     <label htmlFor="genre">Genre</label>
-                    <select multiple 
-                    value={form.genre}
+                    <select multiple
                     name="genre"
-                    onChange={this.onInputChange}
+                    onChange={this.onGenreChange}
                     className="form-control" 
                     id="genre"
                     >
