@@ -4,11 +4,8 @@ import { getMovieById } from '../../actions'
 
 const Movie = (props) => {
     const router = useRouter()
-    const id = router.query.id
-
     return (
         <div className='container'>
-            <h1>Movie with id: {id} </h1>
             <div className="jumbotron">
                 <h1 className="display-4">{props.movie.name}</h1>
                 <p className="lead">{props.movie.description}</p>
@@ -16,15 +13,24 @@ const Movie = (props) => {
                 <p>{props.movie.rating}</p>
                 <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
             </div>
-            <p>
-                Some description about the movie
-            </p>
+            <div className='p-2'>
+                <p><h4>Storyline:</h4></p>
+                <p className='lead'>{props.movie.storyline}</p>
+            </div>
+
+            <style jsx>{`
+            .container {
+                margin-top:50px;    
+            }
+            `}
+            </style>
         </div>
     )
 }
 
-Movie.getInitialProps = async () => {
-    const movie = await getMovieById('2');
+Movie.getInitialProps = async (context) => {
+    const id = context.query.id
+    const movie = await getMovieById(id);
 
     return {
         movie
