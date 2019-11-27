@@ -34,6 +34,16 @@ const MOVIE_DATA = [
     }
 ]
 
+
+const CATEGORY_DATA = [
+  {id: '1', name: 'drama'},
+  {id: '2', name: 'action'},
+  {id: '3', name: 'adventure'},
+  {id: '4', name: 'historical'},
+  {id: '5', name: 'comedy'},
+]
+
+
 export const getMovies = () => {
 
     return new Promise((resolve, reject) => {
@@ -57,5 +67,15 @@ export const getMovieById = (id) => {
     }, 50);
   })
 
+}
+
+
+export const getCategories = () =>{
+
+  return new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve(CATEGORY_DATA)
+  }, 50);
+  })
 }
    

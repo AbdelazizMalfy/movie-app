@@ -4,17 +4,19 @@ import Sidebar from '../components/Sidebar';
 import Carousel from '../components/carousel';
 import MovieList from '../components/movieList';
 
-import { getMovies } from '../actions'
+import { getMovies, getCategories } from '../actions'
 
 class Home extends React.Component {
 
   static async getInitialProps(){
     const movies = await getMovies()
     const images = movies.map( movie => ({ id:`image-${movie.id}`, imageUrl: movie.cover }))
+    const categories = await getCategories();
 
     return {
       movies,
-      images
+      images,
+      categories
     }
   }
 
@@ -25,7 +27,7 @@ class Home extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-lg-3">
-                <Sidebar/>        
+                <Sidebar categories = {this.props.categories} />        
               </div>
               <div className="col-lg-9">
                 <Carousel images = { this.props.images } />

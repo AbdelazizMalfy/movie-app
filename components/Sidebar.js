@@ -1,11 +1,14 @@
-const sidebar = () => {
+const sidebar = (props) => {
+    console.log(props)
     return (
         <div>
             <h1 className="my-4">Categories</h1>
             <div className="list-group">
-            <a href="#" className="list-group-item">Category 1</a>
-            <a href="#" className="list-group-item">Category 2</a>
-            <a href="#" className="list-group-item">Category 3</a>
+                {
+                    props.categories.map(category => (
+                        <a key={category.id} href="#" className="list-group-item">{category.name}</a>
+                    ))
+                }
             </div>
         </div>
     )
