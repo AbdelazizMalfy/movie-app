@@ -10,9 +10,11 @@ class Home extends React.Component {
 
   static async getInitialProps(){
     const movies = await getMovies()
+    const images = movies.map( movie => ({ id:`image-${movie.id}`, image: movie.image }))
 
     return {
-      movies
+      movies,
+      images
     }
   }
 
@@ -26,6 +28,7 @@ class Home extends React.Component {
   // }
 
   render(){
+    console.log(this.props.images)
     return (
       <div>
         <div className='home-page'>
