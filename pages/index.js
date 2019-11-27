@@ -10,7 +10,7 @@ class Home extends React.Component {
 
   static async getInitialProps(){
     const movies = await getMovies()
-    const images = movies.map( movie => ({ id:`image-${movie.id}`, image: movie.image }))
+    const images = movies.map( movie => ({ id:`image-${movie.id}`, imageUrl: movie.image }))
 
     return {
       movies,
@@ -18,17 +18,7 @@ class Home extends React.Component {
     }
   }
 
-
-  // state = {
-  //   movies: []
-  // }
-
-  // componentDidMount(){
-  //   getMovies().then(movies => this.setState({movies}))
-  // }
-
   render(){
-    console.log(this.props.images)
     return (
       <div>
         <div className='home-page'>
@@ -38,7 +28,7 @@ class Home extends React.Component {
                 <Sidebar/>        
               </div>
               <div className="col-lg-9">
-                <Carousel/>
+                <Carousel images = { this.props.images } />
                 <MovieList movies={this.props.movies || []}  />
               </div>
             </div>
