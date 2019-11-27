@@ -1,9 +1,12 @@
 import Modal from './modal';
+import MovieCreateForm from './movieCreateForm';
 
 const sidebar = (props) => {
     return (
         <div>
-            <Modal />
+            <Modal>
+                <MovieCreateForm />
+            </Modal>
             <h1 className="my-4">Categories</h1>
             <div className="list-group">
                 {
