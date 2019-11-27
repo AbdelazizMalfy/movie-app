@@ -40,7 +40,7 @@ class Modal extends React.Component {
                   {
                     this.props.hasSubmit ? 
                      ''
-                     : <button onClick={this.submitModal} type="button" className="btn       btn-primary">Save changes</button> 
+                     : <button onClick={this.submitModal} type="button" className="btn btn-primary">Save changes</button> 
                   }
                 </div>
               </div>

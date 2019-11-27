@@ -8,6 +8,7 @@ const sidebar = (props) => {
 
     const onCreateMovie = (movie) => {
         createMovie(movie).then( movies => {
+            console.log(movies);
             modal.closeModal()
             return movies
         })

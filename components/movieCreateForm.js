@@ -8,7 +8,7 @@ class movieCreateForm extends React.Component{
             rating : '',
             image : '',
             cover : '',
-            Storyline : '',
+            storyline : '',
             genre: ''
         }
     }
@@ -38,7 +38,6 @@ class movieCreateForm extends React.Component{
 
     onFormSubmit = (e) =>{
         e.preventDefault();
-        console.log(this.state.form)
         this.props.createMovie({...this.state.form});
 
     }
